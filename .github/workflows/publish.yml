@@ -11,7 +11,7 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build the kasm-docker Docker image
+      - name: Build the kasm-obsidian Docker image
         run: |
-          docker build . --tag ghcr.io/micahmorgan1/kasm-docker:latest
-          docker push ghcr.io/micahmorgan1/kasm-docker:latest
+          docker build . --tag ghcr.io/micahmorgan1/kasm-obsidian:latest
+          docker push ghcr.io/micahmorgan1/kasm-obsidian:latest
