@@ -8,8 +8,6 @@ WORKDIR $HOME
 
 ######### Customize Container Here ###########
 
-
-
 RUN touch $HOME/Desktop/hello.txt 
 
 ######### End Customizations ###########
