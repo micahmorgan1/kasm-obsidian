@@ -10,8 +10,7 @@ WORKDIR $HOME
 
 
 
-RUN touch $HOME/Desktop/hello.txt
-
+RUN touch $HOME/Desktop/hello.txt 
 
 ######### End Customizations ###########
 
