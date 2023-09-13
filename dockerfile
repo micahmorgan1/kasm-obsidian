@@ -21,7 +21,7 @@ ARG OBSIDIAN_VERSION=1.4.11
 RUN echo "**** download obsidian ****" && \
     curl --location --output obsidian.deb "https://github.com/obsidianmd/obsidian-releases/releases/download/v${OBSIDIAN_VERSION}/obsidian_${OBSIDIAN_VERSION}_amd64.deb" && \
     dpkg -i obsidian.deb && \
-    sed -i 's,/usr/bin/obsidian,/usr/bin/obsidian --no-sandbox,g' /usr/share/applications/obsidian.desktop && \
+    sed -i 's,/opt/Obsidian/obsidian,/opt/Obsidian/obsidian --no-sandbox,g' /usr/share/applications/obsidian.desktop && \
     cp /usr/share/applications/obsidian.desktop $HOME/Desktop/ && \
     chmod +x $HOME/Desktop/obsidian.desktop && \
     chown 1000:1000 $HOME/Desktop/obsidian.desktop
