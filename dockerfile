@@ -16,9 +16,7 @@ RUN echo "**** install packages ****" && \
 
 
 # Set version label
-ARG OBSIDIAN_VERSION=1.4.11
-
-
+ARG OBSIDIAN_VERSION=1.4.12
 
 # Download and install Obsidian
 RUN echo "**** download obsidian ****" && \
@@ -39,8 +37,6 @@ RUN cp $HOME/.config/xfce4/xfconf/single-application-xfce-perchannel-xml/* $HOME
 RUN cp /usr/share/extra/backgrounds/bg_kasm.png /usr/share/extra/backgrounds/bg_default.png
 RUN apt-get remove -y xfce4-panel
 
-######### version ###########
-RUN touch $HOME/Desktop/v1.txt
 
 ######### End Customizations ###########
 
