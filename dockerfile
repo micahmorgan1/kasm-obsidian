@@ -26,6 +26,9 @@ RUN echo "**** download obsidian ****" && \
     chmod +x $HOME/Desktop/obsidian.desktop && \
     chown 1000:1000 $HOME/Desktop/obsidian.desktop
 
+######### version ###########
+RUN touch $HOME/Desktop/v1.txt
+
 ######### End Customizations ###########
 
 RUN chown 1000:0 $HOME
