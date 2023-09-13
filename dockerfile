@@ -14,6 +14,7 @@ RUN echo "**** install packages ****" && \
     apt-get install -y --no-install-recommends curl libgtk-3-0 libnotify4 libatspi2.0-0 libsecret-1-0 libnss3 desktop-file-utils fonts-noto-color-emoji xdg-utils && \
     apt-get autoclean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
 
+
 # Set version label
 ARG OBSIDIAN_VERSION=1.4.11
 
@@ -25,6 +26,16 @@ RUN echo "**** download obsidian ****" && \
     cp /usr/share/applications/obsidian.desktop $HOME/Desktop/ && \
     chmod +x $HOME/Desktop/obsidian.desktop && \
     chown 1000:1000 $HOME/Desktop/obsidian.desktop
+
+COPY ./src/ubuntu/install/obsidian/custom_startup.sh $STARTUPDIR/custom_startup.sh
+RUN chmod +x $STARTUPDIR/custom_startup.sh
+RUN chmod 755 $STARTUPDIR/custom_startup.sh
+
+
+# Update the desktop environment to be optimized for a single application
+RUN cp $HOME/.config/xfce4/xfconf/single-application-xfce-perchannel-xml/* $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/
+RUN cp /usr/share/extra/backgrounds/bg_kasm.png /usr/share/extra/backgrounds/bg_default.png
+RUN apt-get remove -y xfce4-panel
 
 ######### version ###########
 RUN touch $HOME/Desktop/v1.txt
