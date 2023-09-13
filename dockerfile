@@ -29,15 +29,15 @@ RUN echo "**** download obsidian ****" && \
     chmod +x $HOME/Desktop/obsidian.desktop && \
     chown 1000:1000 $HOME/Desktop/obsidian.desktop
 
-# COPY ./src/ubuntu/install/obsidian/custom_startup.sh $STARTUPDIR/custom_startup.sh
-# RUN chmod +x $STARTUPDIR/custom_startup.sh
-# RUN chmod 755 $STARTUPDIR/custom_startup.sh
+COPY ./src/ubuntu/install/obsidian/custom_startup.sh $STARTUPDIR/custom_startup.sh
+RUN chmod +x $STARTUPDIR/custom_startup.sh
+RUN chmod 755 $STARTUPDIR/custom_startup.sh
 
 
 # Update the desktop environment to be optimized for a single application
-# RUN cp $HOME/.config/xfce4/xfconf/single-application-xfce-perchannel-xml/* $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/
-# RUN cp /usr/share/extra/backgrounds/bg_kasm.png /usr/share/extra/backgrounds/bg_default.png
-# RUN apt-get remove -y xfce4-panel
+RUN cp $HOME/.config/xfce4/xfconf/single-application-xfce-perchannel-xml/* $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/
+RUN cp /usr/share/extra/backgrounds/bg_kasm.png /usr/share/extra/backgrounds/bg_default.png
+RUN apt-get remove -y xfce4-panel
 
 ######### version ###########
 RUN touch $HOME/Desktop/v1.txt
