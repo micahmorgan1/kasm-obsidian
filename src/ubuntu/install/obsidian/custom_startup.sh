@@ -26,6 +26,7 @@ for arg; do
     echo "arg! $arg"
 done
 
+
 FORCE=$2
 
 kasm_exec() {
