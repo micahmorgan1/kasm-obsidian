@@ -16,7 +16,7 @@ RUN echo "**** install packages ****" && \
 
 
 # Set version label
-ARG OBSIDIAN_VERSION=1.8.4
+ARG OBSIDIAN_VERSION=1.8.7
 
 # Download and install Obsidian
 RUN echo "**** download obsidian ****" && \
